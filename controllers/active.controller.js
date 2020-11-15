@@ -5,7 +5,7 @@ var path = require('path');
 //nao está funcionando
 exports.create = async (req,res, next) => {
     console.log(req.body)
-    const image = req.file?.filename 
+    const image = req.body.img 
     const active = new Active({
         name: req.body.name,
         image,
