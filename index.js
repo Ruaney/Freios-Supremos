@@ -1,0 +1,29 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const api = require('./routes/api.route');
+
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true}))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.set('view engine', 'ejs')
+
+//conecta ao banco
+const mongoose = require('mongoose');
+const connectURL ='mongodb+srv://db_usernew:root@cluster0.2mh8x.mongodb.net/FreiosSupremos?retryWrites=true&w=majority'
+mongoose.connect(connectURL,{useUnifiedTopology: true}, { useNewUrlParser: true } )
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function(){})
+
+app.use('/api', api)
+app.use(function(err,req,res,next){
+    console.log(err);
+    res.status(422).send({error: err.message});
+})
+
+//Servidor
+let porto = 8000;
+app.listen(porto, () => {
+    console.log('Servidor em execução no porto' + porto);
+})
