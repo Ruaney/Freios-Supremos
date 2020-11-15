@@ -25,6 +25,6 @@ app.use(function(err,req,res,next){
 //Servidor
 let porto = process.env.PORT;
 if(port == null || port == "")
-    port = 8000;
+    porto = 8000;
 
 app.listen(porto)
