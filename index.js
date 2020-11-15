@@ -22,6 +22,11 @@ app.use(function(err,req,res,next){
     res.status(422).send({error: err.message});
 })
 
+app.get('/', function(req,res){
+    res.send('<h2><a href="https://github.com/Ruaney/Freios-Supremos">Mais informações: Git Hub</a></h2>')
+});
+
+
 //Servidor
 let porto = process.env.PORT;
 if(porto == null || porto == "")
