@@ -24,7 +24,7 @@ app.use(function(err,req,res,next){
 
 //Servidor
 let porto = process.env.PORT;
-if(port == null || port == "")
+if(porto == null || porto == "")
     porto = 8000;
 
 app.listen(porto)
