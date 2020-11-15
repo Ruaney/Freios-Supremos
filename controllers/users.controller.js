@@ -11,22 +11,22 @@ exports.create = async (req,res, next) => {
 };
 
 exports.update = function(req,res,next){
-    Company.findByIdAndUpdate({ _id: req.params.id}, 
+    Users.findByIdAndUpdate({ _id: req.params.id}, 
         req.body).then(function(){
-        Company.findOne({
+            Users.findOne({
             _id: req.params.id
-        }).then(function(company){
-            res.send(company)
+        }).then(function(user){
+            res.send(user)
         });
     }).catch(next);
 }
 
 exports.delete = async function(req,res,next){
-    await Company.findByIdAndRemove({
+    await Users.findByIdAndRemove({
         _id: req.params.id
-    }).then(function(company){
-        console.log("Company removed: ");
-        res.send(company);
+    }).then(function(user){
+        console.log("Usuario removed: ");
+        res.send(user);
     }).catch(next);
 }
 
