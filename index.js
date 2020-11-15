@@ -23,7 +23,8 @@ app.use(function(err,req,res,next){
 })
 
 //Servidor
-let porto = 8000;
-app.listen(porto, () => {
-    console.log('Servidor em execução no porto' + porto);
-})
+let porto = = process.env.PORT;
+if(port == null || port == "")
+    port = 8000;
+
+app.listen(porto)
