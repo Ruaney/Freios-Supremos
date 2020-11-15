@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const api = require('./routes/api.route');
-require('dotenv-safe').load();
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true}))
