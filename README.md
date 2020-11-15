@@ -8,7 +8,7 @@ Link para [teste](https://murmuring-escarpment-43451.herokuapp.com/).
 Method   | URI    | Body | Descrição
 --------- | ------| -------| --------
 POST | /api/company/create| name | Cria uma empresa
-GET | /api/company/detail/:id|           | Busca informações detalhadas da empresa
+GET | /api/company/detail/:id|           | Busca informações detalhadas da empresa -unidades aparecem tambem-
 GET | /api/company/listAll|      | Lista todas as empresas
 PUT | /api/company/update/:id|name           | Atualizar dados de uma empresa
 DELETE |/api/company/delete/:id |         | Deleta uma empresa
