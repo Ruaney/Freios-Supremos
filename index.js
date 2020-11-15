@@ -23,7 +23,7 @@ app.use(function(err,req,res,next){
 })
 
 //Servidor
-let porto = = process.env.PORT;
+let porto = process.env.PORT;
 if(port == null || port == "")
     port = 8000;
 
